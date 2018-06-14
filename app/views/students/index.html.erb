@@ -1,0 +1,8 @@
+<% @students.each do |student| %>
+
+  <%= link_to student.name + " " + student.surname + " " + student.code, student %>
+
+<% end %>
+<hr/>
+
+<%= link_to "Yeni Öğrenci Formu Oluştur", new_student_path %>
