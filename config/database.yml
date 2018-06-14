@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  username: umitozturk
+  password:
+  host: localhost
+  pool: 5
+  encoding: unicode
+  schema_search_path: "public,extensions"
+
+development:
+  <<: *default
+  database: school-scale_development
+
+test:
+  <<: *default
+  database: school-scale_test
+
+production:
+  <<: *default
