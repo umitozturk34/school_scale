@@ -1,4 +1,5 @@
 <%= simple_form_for @student do |f| %>
+<div class="form-inputs">
 
   <%= f.input :name, wrapper: false, label_html: { class: 'label' } %><br><br>
   <%= f.input :surname, wrapper: false, label_html: { class: 'label' } %><br><br>
@@ -6,4 +7,5 @@
   <%= f.input :email, wrapper: false, label_html: { class: 'label' } %><br><br>
   <%= f.input :code, wrapper: false, input_html: {value: @code}, label_html: { class: 'label' } %><br><br>
   <%= f.button :submit, class: "btn btn-primary" %>  <%= link_to "Vazgeç", students_path %>
+</div>
 <% end %>

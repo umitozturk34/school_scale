@@ -1,0 +1,11 @@
+<h1 class="title">form init</h1>
+<%= form_tag form_init_path, method: "get" do %>
+  <p>Enter student number: <%= text_field_tag :number %></p>
+  <p>Enter unique code: <%= text_field_tag :code %></p>
+  <%= submit_tag "Forma Git" %>
+<% end %>
+
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+  <div class="notice"><%= flash[:notice2] %></div>
+<% end %>
