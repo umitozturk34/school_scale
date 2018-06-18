@@ -13,8 +13,10 @@ class FormInitController < ApplicationController
         # session create
         if session[:code].present?
           flash.now[:notice2] = 'session created'
-          redirect_to "/form"
+          redirect_to forms_path
         end
+      else
+        flash.now[:notice] = 'Student doesn\'t match!'
       end
     end
   end

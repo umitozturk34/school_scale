@@ -1,0 +1,166 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forms</h1>
+<a href="/forms.csv"><button class="btn btn-success">Excel olarak indir</button></a>
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Classroom</th>
+      <th>Siblings</th>
+      <th>Address</th>
+      <th>Internet usage</th>
+      <th>Mother education</th>
+      <th>Father education</th>
+      <th>Parent status</th>
+      <th>Mother age</th>
+      <th>Father age</th>
+      <th>Transportation</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Q5</th>
+      <th>Q6</th>
+      <th>Q7</th>
+      <th>Q8</th>
+      <th>Q9</th>
+      <th>Q10</th>
+      <th>Q11</th>
+      <th>Q12</th>
+      <th>Q13</th>
+      <th>Q14</th>
+      <th>Q15</th>
+      <th>Q16</th>
+      <th>Q17</th>
+      <th>Q18</th>
+      <th>Q19</th>
+      <th>Q20</th>
+      <th>Q21</th>
+      <th>Q22</th>
+      <th>Q23</th>
+      <th>Q24</th>
+      <th>Q25</th>
+      <th>Q26</th>
+      <th>Q27</th>
+      <th>Q28</th>
+      <th>Q29</th>
+      <th>Q30</th>
+      <th>Q31</th>
+      <th>Q32</th>
+      <th>Q33</th>
+      <th>Q34</th>
+      <th>Q35</th>
+      <th>Q36</th>
+      <th>Q37</th>
+      <th>Q38</th>
+      <th>Q39</th>
+      <th>Q40</th>
+      <th>Q41</th>
+      <th>Q42</th>
+      <th>Q43</th>
+      <th>Q44</th>
+      <th>Q45</th>
+      <th>Q46</th>
+      <th>Q47</th>
+      <th>Q48</th>
+      <th>Q49</th>
+      <th>Q50</th>
+      <th>Q51</th>
+      <th>Q52</th>
+      <th>Q53</th>
+      <th>Q54</th>
+      <th>Q55</th>
+      <th>Q56</th>
+      <th>Q57</th>
+      <th>Q58</th>
+      <th>Q59</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+        <td><%= form.age %></td>
+        <td><%= form.gender %></td>
+        <td><%= form.classroom %></td>
+        <td><%= form.siblings %></td>
+        <td><%= form.address %></td>
+        <td><%= form.internet_usage %></td>
+        <td><%= form.mother_education %></td>
+        <td><%= form.father_education %></td>
+        <td><%= form.parent_status %></td>
+        <td><%= form.mother_age %></td>
+        <td><%= form.father_age %></td>
+        <td><%= form.transportation %></td>
+        <td><%= form.q1 %></td>
+        <td><%= form.q2 %></td>
+        <td><%= form.q3 %></td>
+        <td><%= form.q4 %></td>
+        <td><%= form.q5 %></td>
+        <td><%= form.q6 %></td>
+        <td><%= form.q7 %></td>
+        <td><%= form.q8 %></td>
+        <td><%= form.q9 %></td>
+        <td><%= form.q10 %></td>
+        <td><%= form.q11 %></td>
+        <td><%= form.q12 %></td>
+        <td><%= form.q13 %></td>
+        <td><%= form.q14 %></td>
+        <td><%= form.q15 %></td>
+        <td><%= form.q16 %></td>
+        <td><%= form.q17 %></td>
+        <td><%= form.q18 %></td>
+        <td><%= form.q19 %></td>
+        <td><%= form.q20 %></td>
+        <td><%= form.q21 %></td>
+        <td><%= form.q22 %></td>
+        <td><%= form.q23 %></td>
+        <td><%= form.q24 %></td>
+        <td><%= form.q25 %></td>
+        <td><%= form.q26 %></td>
+        <td><%= form.q27 %></td>
+        <td><%= form.q28 %></td>
+        <td><%= form.q29 %></td>
+        <td><%= form.q30 %></td>
+        <td><%= form.q31 %></td>
+        <td><%= form.q32 %></td>
+        <td><%= form.q33 %></td>
+        <td><%= form.q34 %></td>
+        <td><%= form.q35 %></td>
+        <td><%= form.q36 %></td>
+        <td><%= form.q37 %></td>
+        <td><%= form.q38 %></td>
+        <td><%= form.q39 %></td>
+        <td><%= form.q40 %></td>
+        <td><%= form.q41 %></td>
+        <td><%= form.q42 %></td>
+        <td><%= form.q43 %></td>
+        <td><%= form.q44 %></td>
+        <td><%= form.q45 %></td>
+        <td><%= form.q46 %></td>
+        <td><%= form.q47 %></td>
+        <td><%= form.q48 %></td>
+        <td><%= form.q49 %></td>
+        <td><%= form.q50 %></td>
+        <td><%= form.q51 %></td>
+        <td><%= form.q52 %></td>
+        <td><%= form.q53 %></td>
+        <td><%= form.q54 %></td>
+        <td><%= form.q55 %></td>
+        <td><%= form.q56 %></td>
+        <td><%= form.q57 %></td>
+        <td><%= form.q58 %></td>
+        <td><%= form.q59 %></td>
+        <td><%= link_to 'Show', form %></td>
+        <td><%= link_to 'Edit', edit_form_path(form) %></td>
+        <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Form', new_form_path %>
