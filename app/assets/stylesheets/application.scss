@@ -13,3 +13,15 @@
  */
 
 @import "bootstrap";
+
+button:focus {
+    outline: 0;
+}
+
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
+
+.btn btn-warning {
+  background-color: #ffda45 !important;
+}

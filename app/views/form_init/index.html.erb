@@ -1,11 +1,24 @@
-<h1 class="title">Form Girişi</h1>
-<%= form_tag form_init_path, method: "get" do %>
-  <p>Enter student number: <%= text_field_tag :number %></p>
-  <p>Enter unique code: <%= text_field_tag :code %></p>
-  <%= submit_tag "Forma Git" %>
-<% end %>
+<div class="mx-auto" style="width:300px">
+  <form class="form-signin">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Form Girişi</h1>
+        <p>Buradan <code>Okul Numarası</code>'nı ve size gönderilen <code>Kod</code>'u girerek formunuzu doldurunuz. </p>
+      </div>
+
+      <div class="mx-auto" style="width: 200px;">
+        <%= form_tag form_init_path, method: "get" do %>
+          <p>Öğrenci Numarası:<br> <%= text_field_tag :number %></p>
+          <p>Kod:<br> <%= text_field_tag :code %></p>
+          <%= submit_tag "Forma Git", class: "btn btn-warning" %>
+        <% end %>
+      </div>
+
+
+
+</div>
 
 <% if flash[:notice] %>
-<div class="notice"><%= flash[:notice] %></div>
+  <div class="notice"><%= flash[:notice] %></div>
   <div class="notice"><%= flash[:notice2] %></div>
 <% end %>

@@ -1,8 +1,46 @@
+<div class="container" style="padding-top: 40px;">
+
+  <div class="card" style="padding-bottom: 30px;">
+  <h5 class="card-header">
+    Öğrenciler
+  </h5>
+  <div class="card-body">
+    <h6 class="card-title">Öğrenci Listesi</h6>
+    <p class="card-text">Öğrencilerin listesi aşağıdaki gibidir. Bu öğrenciler oluşturulduktan sonra <b>Okul Numarası</b> ve <b>Kod</b>'larıyla <%= link_to "buradan", form_init_path, class: "badge badge-success" %> giriş yapıp forma ulaşabilirler.</p>
+    <%= link_to "Yeni Öğrenci Formu Oluştur", new_student_path, class: "btn btn-warning" %>
+  </div>
+</div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id#</th>
+        <th scope="col">Öğrenci</th>
+        <th scope="col">Okul Numarası</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Kod</th>
+      </tr>
+    </thead>
+    <tbody>
 <% @students.each do |student| %>
 
-  <%= link_to student.name + " " + student.surname + " " + student.code, student %><br/>
+
+
+      <tr>
+        <th scope="row"><%= student.id %></th>
+        <td><%= link_to student.name + " " + student.surname, student %></td>
+        <td><%= student.number %></td>
+        <td><%= mail_to student.email, student.email %></td>
+        <td><%= student.code %></td>
+      </tr>
+
 
 <% end %>
+</tbody>
+</table>
+
 <hr/>
 
-<%= link_to "Yeni Öğrenci Formu Oluştur", new_student_path %>
+
+
+</div>
