@@ -17,3 +17,37 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+$( document ).ready(function() {
+  $('#s1,#s2,#s3,#s4').hide();
+  $('#form_transportation_servisle').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').show();
+      // hide div blocks by $('div#id').hide();
+  });
+  $('#form_transportation_yürüyerek').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').hide();
+      // hide div blocks by $('div#id').hide();
+  });
+  $('#form_transportation_bisikletle').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').hide();
+      // hide div blocks by $('div#id').hide();
+  });
+  $('#form_transportation__özel_araçla').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').hide();
+      // hide div blocks by $('div#id').hide();
+  });
+  $('#form_transportation_toplu_taşıma_aracıyla').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').hide();
+      // hide div blocks by $('div#id').hide();
+  });
+  $('#form_transportation_diğer').click(function() {
+      // check radio button value by this.value
+      $('#s1,#s2,#s3,#s4').hide();
+      // hide div blocks by $('div#id').hide();
+  });
+});
