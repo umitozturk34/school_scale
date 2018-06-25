@@ -30,7 +30,7 @@
                 <% elsif school_signed_in? %>
                 <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                   <form class="form-inline my-2 my-md-0">
-                     <%= link_to 'Çıkış Yap: ' + current_school.name, destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark" %>
+                     <%= link_to 'Çıkış Yap: ' + current_school.email, destroy_school_session_path, method: :delete, class: "btn btn-outline-dark" %>
                   </form>
                 </ul>
                 <% else %>
