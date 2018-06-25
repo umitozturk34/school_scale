@@ -40,6 +40,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'figaro'
 gem 'bcrypt'
+gem 'rails_12factor', group: :production
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
