@@ -1,4 +1,4 @@
-<div class="mx-auto" style="width:300px">
+<div class="mx-auto" style="width:300px; margin-top:40px;">
   <form class="form-signin">
       <div class="text-center mb-4">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -12,13 +12,13 @@
           <p>Kod:<br> <%= text_field_tag :code %></p>
           <%= submit_tag "Forma Git", class: "btn btn-warning" %>
         <% end %>
+        <br/><br/><br/>
+        <% if flash[:notice] %>
+          <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+
       </div>
 
 
 
 </div>
-
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-  <div class="notice"><%= flash[:notice2] %></div>
-<% end %>

@@ -4,7 +4,7 @@
   <%= f.input :surname, wrapper: false, label: 'Soyad', label_html: { class: 'form-inline' }, required: true %><br><br>
   <%= f.input :number, wrapper: false, label: 'Okul no', label_html: { class: 'form-inline' }, required: true %><br><br>
   <%= f.input :email, wrapper: false, label: 'Öğrenci e-mail', label_html: { class: 'form-inline' }, required: true %><br><br>
-  <%= f.input :code, wrapper: false, label: 'Kod : ', input_html: {value: @code}, label_html: { class: 'form-inline' } %>
+  <%= f.input :code, wrapper: false, label: 'Kod : ', input_html: {value: @code}, label_html: { class: 'form-inline' }, readonly: true %>
   <small id="emailHelp" class="form-text text-muted">Bu kod her öğrenciye farklı olarak otomatik oluşturulur.</small>
   <br><br>
   <%= f.button :submit, value: 'Öğrenci Formunu Oluştur', class: "btn btn-primary" %> &nbsp;&nbsp;&nbsp; <%= link_to "Vazgeç", students_path %>

@@ -1,8 +1,10 @@
-<h1>student</h1>
-name: <%= @student.name %><br>
-surname: <%= @student.surname %><br>
-number: <%= @student.number %><br>
-code: <%= @student.code %><br><br>
-
-<%= link_to "Öğrenci Formunu Sil" %> <br>
-<%= link_to "Geri Dön", students_path %>
+<div class="container" style="margin-top:40px;">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @student.name + ' ' + @student.surname %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @student.number %></h6>
+      <p class="card-text"><%= @student.code %></p>
+      <a href="#" class="card-link"><%= link_to "Geri Dön", students_path, class: 'btn btn-dark' %></a>
+    </div>
+  </div>
+</div>
