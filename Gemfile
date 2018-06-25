@@ -34,7 +34,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'simple_form'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+gem 'jquery-rails'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
+gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem "figaro"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
