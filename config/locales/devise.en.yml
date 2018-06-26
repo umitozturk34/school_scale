@@ -7,15 +7,15 @@ en:
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
+      already_authenticated: "Zaten giriş yaptın :)"
       inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: "Email ile girdiğiniz parola uyuşmuyor."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      not_found_in_database: "Böyle bir kullanıcı bulunamadı."
+      timeout: "Oturumunuz sona erdi. Devam etmek için lütfen giriş yapın."
+      unauthenticated: "Devam etmeden önce giriş yapman veya kayıt olman gerekmekte"
+      unconfirmed: "Devam etmeden önce hesabınızı onaylamalısınız."
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
