@@ -1,6 +1,4 @@
 class FormsController < ApplicationController
-  devise_group :programme_editor, contains: %i(admin school)
-  before_action :authenticate_programme_editor!
 
   # GET /forms
   # GET /forms.json
