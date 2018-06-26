@@ -57,11 +57,27 @@
         </div>
     </nav>
 
+    <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
     <div class="container">
+      <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> This alert box could indicate a successful or positive action.
+      </div>
       <p class="alert alert-danger" role="alert">notice<%= notice %></p>
       <p class="alert alert-warning" role="alert">alert<%= alert %></p>
     </div>
-    
+
       <%= yield %>
 
     <footer class="mastfoot mt-auto" style="padding:20px;">
