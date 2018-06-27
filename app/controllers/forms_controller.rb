@@ -38,7 +38,7 @@ class FormsController < ApplicationController
 
     respond_to do |format|
       if @form.save
-        format.html { redirect_to forms_path, notice: 'Form was successfully created.' }
+        format.html { redirect_to forms_path, notice: 'Form oluşturuldu.' }
         format.json { render :show, status: :created, location: @form }
         format.csv { send_data @forms.to_csv }
       else
@@ -54,7 +54,7 @@ class FormsController < ApplicationController
   def update
     respond_to do |format|
       if @form.update(form_params)
-        format.html { redirect_to @form, notice: 'Form was successfully updated.' }
+        format.html { redirect_to @form, notice: 'Form oluşturuldu.' }
         format.json { render :show, status: :ok, location: @form }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class FormsController < ApplicationController
   def destroy
     @form.destroy
     respond_to do |format|
-      format.html { redirect_to forms_url, notice: 'Form was successfully destroyed.' }
+      format.html { redirect_to forms_url, notice: 'Form oluşturuldu.' }
       format.json { head :no_content }
     end
   end
