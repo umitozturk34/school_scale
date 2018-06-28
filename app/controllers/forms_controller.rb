@@ -1,5 +1,9 @@
 class FormsController < ApplicationController
 
+  devise_group :programme_editor, contains: %i(admin school)
+  before_action :authenticate_programme_editor!, :except => [:new]
+
+
   # GET /forms
   # GET /forms.json
   def index
@@ -25,6 +29,9 @@ class FormsController < ApplicationController
   # GET /forms/new
   def new
     @form = Form.new
+    if session[:code].nil?
+      redirect_to form_init_path
+    end
   end
 
   # GET /forms/1/edit

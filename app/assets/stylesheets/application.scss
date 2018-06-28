@@ -41,3 +41,32 @@ button:focus {
     border-color: $form-feedback-invalid-color;
   }
 }
+
+/*Set a min width where your table start to look like crap*/
+table { min-width: 800px; min-height: 400px;}
+
+/*The next 3 sections make the magic happen*/
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 13px;
+}
+
+tbody {
+    display: block;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*Use the following to make sure cols align correctly*/
+table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
