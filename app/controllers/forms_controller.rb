@@ -17,6 +17,7 @@ class FormsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @forms.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
   end
 
@@ -28,6 +29,10 @@ class FormsController < ApplicationController
 
   # GET /forms/new
   def new
+    @student_id = Student.where([ "code = ?", session[:code] ])
+    @school_id = @student_id[0].school_id
+    @school_name = School.find(@school_id).name
+    session[:school_name] = @school_name
     @form = Form.new
     if session[:code].nil?
       redirect_to form_init_path
@@ -89,6 +94,6 @@ class FormsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_params
       params.require(:form).permit(:age, :gender, :classroom, :siblings, :address, :internet_usage, :mother_education, :father_education, :parent_status, :mother_age, :father_age, :transportation, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20, :q21, :q22, :q23, :q24, :q25, :q26, :q27, :q28, :q29, :q30, :q31, :q32, :q33, :q34, :q35, :q36, :q37, :q38, :q39, :q40, :q41, :q42, :q43, :q44, :q45, :q46, :q47, :q48, :q49, :q50, :q51, :q52, :q53, :q54, :q55, :q56, :q57, :q58, :q59)
-      .merge(student_id: session[:student_id][0])
+      .merge(student_id: session[:student_id][0], school_name: session[:school_name])
     end
 end

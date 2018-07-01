@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">age</Data></Cell>
+        <Cell><Data ss:Type="String">gender</Data></Cell>
+        <Cell><Data ss:Type="String">classroom</Data></Cell>
+        <Cell><Data ss:Type="String">address</Data></Cell>
+        <Cell><Data ss:Type="String">internet_usage</Data></Cell>
+        <Cell><Data ss:Type="String">mother_education</Data></Cell>
+        <Cell><Data ss:Type="String">father_education</Data></Cell>
+        <Cell><Data ss:Type="String">parent_status</Data></Cell>
+        <Cell><Data ss:Type="String">mother_age</Data></Cell>
+        <Cell><Data ss:Type="String">transportation</Data></Cell>
+        <Cell><Data ss:Type="String">q1</Data></Cell>
+        <Cell><Data ss:Type="String">q2</Data></Cell>
+        <Cell><Data ss:Type="String">q3</Data></Cell>
+        <Cell><Data ss:Type="String">q4</Data></Cell>
+        <Cell><Data ss:Type="String">q5</Data></Cell>
+        <Cell><Data ss:Type="String">q6</Data></Cell>
+        <Cell><Data ss:Type="String">q7</Data></Cell>
+        <Cell><Data ss:Type="String">q8</Data></Cell>
+        <Cell><Data ss:Type="String">q9</Data></Cell>
+        <Cell><Data ss:Type="String">q10</Data></Cell>
+        <Cell><Data ss:Type="String">q11</Data></Cell>
+        <Cell><Data ss:Type="String">q12</Data></Cell>
+        <Cell><Data ss:Type="String">q13</Data></Cell>
+        <Cell><Data ss:Type="String">q14</Data></Cell>
+        <Cell><Data ss:Type="String">q15</Data></Cell>
+        <Cell><Data ss:Type="String">q16</Data></Cell>
+        <Cell><Data ss:Type="String">q17</Data></Cell>
+        <Cell><Data ss:Type="String">q18</Data></Cell>
+        <Cell><Data ss:Type="String">q19</Data></Cell>
+        <Cell><Data ss:Type="String">q20</Data></Cell>
+        <Cell><Data ss:Type="String">q21</Data></Cell>
+        <Cell><Data ss:Type="String">q22</Data></Cell>
+        <Cell><Data ss:Type="String">q23</Data></Cell>
+        <Cell><Data ss:Type="String">q24</Data></Cell>
+        <Cell><Data ss:Type="String">q25</Data></Cell>
+        <Cell><Data ss:Type="String">q26</Data></Cell>
+        <Cell><Data ss:Type="String">q27</Data></Cell>
+        <Cell><Data ss:Type="String">q28</Data></Cell>
+        <Cell><Data ss:Type="String">q29</Data></Cell>
+        <Cell><Data ss:Type="String">q30</Data></Cell>
+        <Cell><Data ss:Type="String">q31</Data></Cell>
+        <Cell><Data ss:Type="String">q32</Data></Cell>
+        <Cell><Data ss:Type="String">q33</Data></Cell>
+        <Cell><Data ss:Type="String">q34</Data></Cell>
+        <Cell><Data ss:Type="String">q35</Data></Cell>
+        <Cell><Data ss:Type="String">q36</Data></Cell>
+        <Cell><Data ss:Type="String">q37</Data></Cell>
+        <Cell><Data ss:Type="String">q38</Data></Cell>
+        <Cell><Data ss:Type="String">q39</Data></Cell>
+        <Cell><Data ss:Type="String">q40</Data></Cell>
+        <Cell><Data ss:Type="String">q41</Data></Cell>
+        <Cell><Data ss:Type="String">q42</Data></Cell>
+        <Cell><Data ss:Type="String">q43</Data></Cell>
+        <Cell><Data ss:Type="String">q44</Data></Cell>
+        <Cell><Data ss:Type="String">q45</Data></Cell>
+        <Cell><Data ss:Type="String">q46</Data></Cell>
+        <Cell><Data ss:Type="String">q47</Data></Cell>
+        <Cell><Data ss:Type="String">q48</Data></Cell>
+        <Cell><Data ss:Type="String">q49</Data></Cell>
+        <Cell><Data ss:Type="String">q50</Data></Cell>
+        <Cell><Data ss:Type="String">q51</Data></Cell>
+        <Cell><Data ss:Type="String">q52</Data></Cell>
+        <Cell><Data ss:Type="String">q53</Data></Cell>
+        <Cell><Data ss:Type="String">q54</Data></Cell>
+        <Cell><Data ss:Type="String">q55</Data></Cell>
+        <Cell><Data ss:Type="String">q56</Data></Cell>
+        <Cell><Data ss:Type="String">q57</Data></Cell>
+        <Cell><Data ss:Type="String">q58</Data></Cell>
+        <Cell><Data ss:Type="String">q59</Data></Cell>
+      </Row>
+    <% @forms.each do |form| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= form.id %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.age %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.gender %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.classroom %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.internet_usage %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.mother_education %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.father_education %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.parent_status %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.mother_age %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.father_age %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.transportation %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q1 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q2 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q3 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q4 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q5 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q6 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q7 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q8 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q9 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q10 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q11 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q12 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q13 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q14 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q15 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q16 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q17 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q18 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q19 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q20 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q21 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q22 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q23 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q24 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q25 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q26 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q27 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q28 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q29 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q30 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q31 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q32 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q33 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q34 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q35 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q36 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q37 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q38 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q39 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q40 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q41 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q42 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q43 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q44 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q45 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q46 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q47 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q48 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q49 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q50 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q51 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q52 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q53 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q54 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q55 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q56 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q57 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q58 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= form.q59 %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

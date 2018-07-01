@@ -1,8 +1,7 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="mx-auto" style="width:300px;">
+<div class="border-form-div">
   <form class="form-signin">
-    <img class="mb-4" src="http://csgsecurity.com.tr/wp-content/uploads/2017/01/logo.png" alt="">
-    <h1 class="h3 mb-3 font-weight-normal">Lütfen Giriş Yapın</h1>
+    <h3 class="h3 mb-3 font-weight-normal">Giriş Yapın</h3>
     <%= f.input :email, required: false, label: false, class: 'sr-only', autofocus: true, placeholder: "Email adresi" %>
     <%= f.input :password, required: false, label: false, class: 'form-control', label_html: { id: "inputPassword" }, placeholder: "Şifre" %><br/>
     <div class="checkbox mb-3">

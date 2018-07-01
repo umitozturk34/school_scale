@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col text-left"><h2>Öğrenci Ölçekleri</h2> ( Toplam: <%= @forms.count %>)</div>
-  <div class="col text-right"><a href="/forms.csv"><button class="btn btn-success"> Tüm ölçeği Excel olarak indir</button></a></div>
+  <div class="col text-right"><%= link_to ".CSV indir", forms_path(format: "csv"), class: "btn btn-success" %>&nbsp;&nbsp;&nbsp;<%= link_to "Excel indir", forms_path(format: "xls"), class: "btn btn-success" %></div>
 </div>
 
 

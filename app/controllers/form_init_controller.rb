@@ -29,7 +29,7 @@ class FormInitController < ApplicationController
         end
 
       else
-        flash.now[:notice] = 'Opppss.. Öğrenci bulunamadı :/'
+        flash.now[:notice] = 'Opppss.. Öğrenci kaydı bulunamadı.'
       end
     end
   end
