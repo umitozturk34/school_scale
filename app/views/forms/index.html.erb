@@ -5,48 +5,4 @@
   <div class="col text-right"><%= link_to ".CSV indir", forms_path(format: "csv"), class: "btn btn-success" %>&nbsp;&nbsp;&nbsp;<%= link_to "Excel indir", forms_path(format: "xls"), class: "btn btn-success" %></div>
 </div>
 
-
-
-<br/><br/>
-<table class="table table-sm table-bordered table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th>Yaş</th>
-      <th>Cinsiyet</th>
-      <th>Sınıfı</th>
-      <th>Kardeş Sayısı</th>
-      <th>Adres</th>
-      <th>İnternet ve Sosyal Medya Kullanımı</th>
-      <th>Anne Eğitim Düzeyi</th>
-      <th>Baba Eğitim Düzeyi</th>
-      <th>Evlilik Durumu</th>
-      <th>Anne Yaşı</th>
-      <th>Baba Yaşı</th>
-      <th>Ulaşım Türü</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @forms.each do |form| %>
-      <tr>
-        <td><%= form.age %></td>
-        <td><%= form.gender %></td>
-        <td><%= form.classroom %></td>
-        <td><%= form.siblings %></td>
-        <td><%= form.address %></td>
-        <td><%= form.internet_usage %></td>
-        <td><%= form.mother_education %></td>
-        <td><%= form.father_education %></td>
-        <td><%= form.parent_status %></td>
-        <td><%= form.mother_age %></td>
-        <td><%= form.father_age %></td>
-        <td><%= form.transportation %></td>
-        <td><%= link_to 'İncele', form, class: 'btn btn-primary' %></td>
-        <%#= link_to 'Düzenle', edit_form_path(form), class: 'btn btn-warning' %>
-        <td><%= link_to 'Sil', form, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 </div>
