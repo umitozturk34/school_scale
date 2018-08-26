@@ -14,6 +14,13 @@ class FormsController < ApplicationController
       @forms = Form.all
     end
 
+    @q = params[:q]
+    if @q == 't'
+      @filled = Student.where(school_id: current_school.id, process: 1)
+    else
+      @waiting = Student.where(school_id: current_school.id, process: 0)
+    end
+
     respond_to do |format|
       format.html
       format.csv { send_data @forms.to_csv }

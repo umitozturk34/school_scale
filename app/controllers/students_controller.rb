@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :surname, :number, :email, :code).merge(school_id: current_school.id)
+    params.require(:student).permit(:name, :surname, :number, :email, :code).merge(school_id: current_school.id, process: 0)
   end
 
 end
