@@ -1,13 +1,17 @@
 <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron" style="background-color:rgb(229, 229, 229)">
+      <div class="">
         <div class="container">
-          <h1 class="display-3">CSG | Güvenli Okul Ölçeği v1.0</h1>
-          <p>CSG ve Bahçeşehir Üniversitesi tarafından geliştirilen Güvenli Okul Ölçeği’nin öğrenci formu 2017 yılında Türkiye genelinde 23 okulda 2471 öğrenciye uygulanmıştır. Uygulamaya ilkokuldan liseye tüm öğrenim düzeyinde öğrenciler dahildir.</p><br/>
+          <br><br>
+          <h3 class="display-4">OKUL GÜVENLİĞİ ÖLÇEĞİ</h3><br>
+          <p>City Security Group ve Bahçeşehir Üniversitesi iş birliğiyle hazırlanan bu anket, öğrencilerin eğitim aldıkları okula dair güvenlik algılarını ölçmek amacıyla hazırlanmıştır. Uygulanan bu anket ile okulun eğitim-öğretim ortamının zenginleştirilmesine katkı sağlanması amaçlanmaktadır.
+            <br/><br/>Cevaplarınız gizli tutulacak, araştırmacılar dışında kimse ile paylaşılmayacaktır. Burada doğru-yanlış cevap yoktur. Önemli olan sizin okulunuzun güvenliğine dair algınızı yansıtmanızdır. Araştırmanın verimliliği açısından cevaplarınızın içten ve samimi olması önemlidir.
+            <br/><br/>Katılımınız için teşekkür ederiz.</p><br/>
           <p><a class="btn btn-primary btn-lg" href="http://csgsecurity.com.tr/wp-content/uploads/2018/03/CSG-G%C3%9CVENL%C4%B0-OKUL-TANITIM-KATALO%C4%9EU.pdf" target="_blank" role="button">Detaylı Bilgi</a></p>
         </div>
       </div>
+  <br><br>
 
       <div class="container">
         <% if school_signed_in? || admin_signed_in? %>
@@ -17,18 +21,18 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Öğrenci Formlarını Görüntüle</h5>
-                <p class="card-text">Oluşturulmuş öğrenci formlarını yönet.</p>
-                <%= link_to 'Öğrenci Formları', students_path, class: "btn btn-warning" %>
+                <h5 class="card-title">Öğrencileri Görüntüle</h5>
+                <p class="card-text">Öğrenci kayıtlarını yönet.</p>
+                <%= link_to 'Öğrenciler', students_path, class: "btn btn-warning" %>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Yeni Öğrenci Formları Oluştur</h5>
-                <p class="card-text">Öğrenciler için form oluşturarak sistemi güncel tut.</p>
-                <%= link_to 'Yeni Öğrenci Formu Oluştur', new_student_path, class: "btn btn-warning" %>
+                <h5 class="card-title">Yeni Öğrenci Oluştur</h5>
+                <p class="card-text">Öğrencilerin kaydını oluşturarak sistemi güncel tut.</p>
+                <%= link_to 'Yeni Öğrenci Oluştur', new_student_path, class: "btn btn-warning" %>
               </div>
             </div>
           </div>

@@ -1,44 +1,49 @@
-<hr/>
-
+<br>
 <%= simple_form_for(@form, html: { novalidate: true }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Cinsiyet</label></div>
       <div class="col-4"><%= f.input :gender, label: false, collection: [ "Kız", "Erkek"], prompt: "-- Cinsiyet seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Sınıf</label></div>
       <div class="col-4">  <%= f.input :classroom, label: false, collection: [ "5. Sınıf", "6. Sınıf", "7. Sınıf", "8. Sınıf", "9. Sınıf", "10. Sınıf", "11. Sınıf", "12. Sınıf"], prompt: "-- Sınıfınızı seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Kardeş sayısı</label></div>
       <div class="col-4"><%= f.input :siblings, label: false, collection: [ "Yok", "1", "2", "3", "4 ve üzeri"], prompt: "-- Kardeş sayısı seçiniz --"  %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
+<<<<<<< HEAD
       <div class="col-4 text-right"><label class="">Oturduğu Semt/Mahalle</label></div>
       <div class="col-4"><%= f.input :address, placeholder: "Semt/Mahalle", label: false, label_html: { class: "label" }, class: "input-xlarge" %></div>
     </div>
+=======
+      <div class="col-4 text-right"><label class="">Oturduğu Mahalle/Semt</label></div>
+      <div class="col-4"><%= f.input :address, placeholder: "Semt", label: false, label_html: { class: "label" }, class: "input-xlarge" %></div>
+    </div><br>
+>>>>>>> c02718e938e8cee201e20e9a1e1639969dfcfe68
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Anne Eğitim Durumu</label></div>
       <div class="col-4"><%= f.input :mother_education, label: false, collection: [ "İlkokul", "Ortaokul", "Lise", "Üniversite", "Diğer", "Hiçbiri"], prompt: "-- Anne eğitimi seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Baba Eğitim Durumu</label></div>
       <div class="col-4"><%= f.input :father_education, label: false, collection: [ "İlkokul", "Ortaokul", "Lise", "Üniversite", "Diğer", "Hiçbiri"], prompt: "-- Baba eğitimi seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Anne/Baba</label></div>
       <div class="col-4"><%= f.collection_radio_buttons :parent_status, [['Evli', 'Evli '], ['Boşanmış', ' Boşanmış ']], :first, :last, label: false, class: 'form-control' %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Anne yaşı</label></div>
       <div class="col-4"><%= f.input :mother_age, label: false, collection: 18..60, prompt: "-- Anne Yaşı seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Baba yaşı</label></div>
       <div class="col-4"><%= f.input :father_age, label: false, collection: 18..60, prompt: "-- Baba Yaşı seçiniz --" %></div>
-    </div>
+    </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Ulaşım türü</label></div>
       <div class="col-4"><%= f.collection_radio_buttons :transportation, [['Yürüyerek', ' Yürüyerek '] ,['Bisikletle', ' Bisikletle '], ['Servisle', ' Servisle '], [' Özel Araçla', ' Özel Araçla '], ['Toplu Taşıma Aracıyla', ' Toplu Taşıma Aracıyla '], ['Diğer', ' Diğer ']], :first, :last, label: false %></div>
