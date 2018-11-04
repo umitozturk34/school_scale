@@ -4,10 +4,6 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="row justify-content-start">
-      <div class="col-4 text-right"><label class="">Yaş</label></div>
-      <div class="col-4"><%= f.input :age, label: false, collection: 7..60, prompt: "-- Yaşınızı seçiniz --" %></div>
-    </div>
-    <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Cinsiyet</label></div>
       <div class="col-4"><%= f.input :gender, label: false, collection: [ "Kız", "Erkek"], prompt: "-- Cinsiyet seçiniz --" %></div>
     </div>
@@ -20,12 +16,8 @@
       <div class="col-4"><%= f.input :siblings, label: false, collection: [ "Yok", "1", "2", "3", "4 ve üzeri"], prompt: "-- Kardeş sayısı seçiniz --"  %></div>
     </div>
     <div class="row justify-content-start">
-      <div class="col-4 text-right"><label class="">İkametgâh semti</label></div>
-      <div class="col-4"><%= f.input :address, placeholder: "Semt", label: false, label_html: { class: "label" }, class: "input-xlarge" %></div>
-    </div>
-    <div class="row justify-content-start">
-      <div class="col-4 text-right"><label class="">İnternet ve sosyal medya kullanımı</label></div>
-      <div class="col-4"><%= f.collection_radio_buttons :internet_usage, [['Evet', 'Evet '] ,['Hayır', ' Hayr ']], :first, :last, label: false, class: 'form-control' %></div>
+      <div class="col-4 text-right"><label class="">Oturduğu Semt/Mahalle</label></div>
+      <div class="col-4"><%= f.input :address, placeholder: "Semt/Mahalle", label: false, label_html: { class: "label" }, class: "input-xlarge" %></div>
     </div>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Anne Eğitim Durumu</label></div>
@@ -490,7 +482,7 @@
           <td class="text-center"><%= f.radio_button :q53,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz şiddet ve saldırı olaylarının yaşandığı bir çevrede değildir</th>
+          <th style="width:300px;" scope="row">Her ihtiyaç duyduğumda okul revirinden ( sağlık odası) yararlanırım.</th>
           <td class="text-center"><%= f.radio_button :q54,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q54,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q54,['3'] %></td>
@@ -498,7 +490,7 @@
           <td class="text-center"><%= f.radio_button :q54,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz şiddet ve saldırı olaylarının yaşandığı bir çevrede değildir?</th>
+          <th style="width:300px;" scope="row">Okulumuz şiddet ve saldırı olaylarının yaşandığı bir çevrede değildir.</th>
           <td class="text-center"><%= f.radio_button :q55,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['3'] %></td>
