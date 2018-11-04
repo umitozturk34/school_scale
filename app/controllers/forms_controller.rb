@@ -14,12 +14,12 @@ class FormsController < ApplicationController
       @forms = Form.all
     end
 
-    @q = params[:q]
-    if @q == 't'
-      @filled = Student.where(school_id: current_school.id, process: 1)
-    else
-      @waiting = Student.where(school_id: current_school.id, process: 0)
-    end
+    #@form_param = params[:q]
+    #if @form_param == 't'
+    #  @filled = Student.where(school_id: current_school.id, process: 1)
+    #else
+    #  @waiting = Student.where(school_id: current_school.id, process: 0)
+    #end
 
     respond_to do |format|
       format.html
