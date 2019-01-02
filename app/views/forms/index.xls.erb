@@ -8,11 +8,9 @@
     <Table>
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">yas</Data></Cell>
         <Cell><Data ss:Type="String">cinsiyet</Data></Cell>
         <Cell><Data ss:Type="String">sinif</Data></Cell>
         <Cell><Data ss:Type="String">adres</Data></Cell>
-        <Cell><Data ss:Type="String">internet_kullanimi</Data></Cell>
         <Cell><Data ss:Type="String">anne_egitim</Data></Cell>
         <Cell><Data ss:Type="String">baba_egitim</Data></Cell>
         <Cell><Data ss:Type="String">evlilik_durumu</Data></Cell>
@@ -82,10 +80,9 @@
     <% @forms.each do |form| %>
       <Row>
         <Cell><Data ss:Type="Number"><%= form.id %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= form.age %></Data></Cell>
         <Cell><Data ss:Type="String"><%= form.gender %></Data></Cell>
         <Cell><Data ss:Type="String"><%= form.classroom %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= form.internet_usage %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= form.address %></Data></Cell>
         <Cell><Data ss:Type="String"><%= form.mother_education %></Data></Cell>
         <Cell><Data ss:Type="String"><%= form.father_education %></Data></Cell>
         <Cell><Data ss:Type="String"><%= form.parent_status %></Data></Cell>

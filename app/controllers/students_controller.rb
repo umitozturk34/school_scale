@@ -16,8 +16,11 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
-
+    if current_school.present?
+      @student = Student.new(student_params.merge({school_id: current_school.id , process: 0}))
+    else
+      @student = Student.new(student_params.merge({school_id: 0, process: 0}))
+    end
 
     if @student.save
       redirect_to @student
@@ -32,8 +35,8 @@ class StudentsController < ApplicationController
 
   private
 
-  def student_params
-    params.require(:student).permit(:name, :surname, :number, :email, :code).merge(school_id: current_school.id, process: 0)
-  end
+    def student_params
+      params.require(:student).permit(:name, :surname, :number, :email, :code, :school_id, :process)
+    end
 
 end

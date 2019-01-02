@@ -1,6 +1,7 @@
 <br>
 <%= simple_form_for(@form, html: { novalidate: true }) do |f| %>
-  <%= f.error_notification %>
+  <%= f.error_notification class: "alet alert-danger" %>
+  <br>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Cinsiyet</label></div>
@@ -8,7 +9,7 @@
     </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Sınıf</label></div>
-      <div class="col-4">  <%= f.input :classroom, label: false, collection: [ "5. Sınıf", "6. Sınıf", "7. Sınıf", "8. Sınıf", "9. Sınıf", "10. Sınıf", "11. Sınıf", "12. Sınıf"], prompt: "-- Sınıfınızı seçiniz --" %></div>
+      <div class="col-4">  <%= f.input :classroom, required: true, label: false, collection: [ "5. Sınıf", "6. Sınıf", "7. Sınıf", "8. Sınıf", "9. Sınıf", "10. Sınıf", "11. Sınıf", "12. Sınıf"], prompt: "-- Sınıfınızı seçiniz --" %></div>
     </div><br>
     <div class="row justify-content-start">
       <div class="col-4 text-right"><label class="">Kardeş sayısı</label></div>
@@ -42,8 +43,9 @@
       <div class="col-4 text-right"><label class="">Ulaşım türü</label></div>
       <div class="col-4"><%= f.collection_radio_buttons :transportation, [['Yürüyerek', ' Yürüyerek '] ,['Bisikletle', ' Bisikletle '], ['Servisle', ' Servisle '], [' Özel Araçla', ' Özel Araçla '], ['Toplu Taşıma Aracıyla', ' Toplu Taşıma Aracıyla '], ['Diğer', ' Diğer ']], :first, :last, label: false %></div>
     </div>
-<br/><hr/> <br/>
-
+  <div class="alert alert-danger" role="alert">
+    <p>Formda cevaplamanız istenen toplam 59 madde vardır. Lütfen tüm seçenekleri işaretlediğinizden emin olun.</p>
+  </div>
     <table class="table">
       <thead>
         <tr>
@@ -57,7 +59,7 @@
       </thead>
       <tbody>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun içindeki her yer nöbetçi öğretmenlerin ve kameraların görüş alanı içerisindedir.</th>
+          <th style="width:300px;" scope="row">Okulumuz şiddet ve saldırı olaylarının yaşandığı bir çevrede <b>değildir.</b></th>
           <td class="text-center"><%= f.radio_button :q1,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q1,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q1,['3'] %></td>
@@ -65,7 +67,7 @@
           <td class="text-center"><%= f.radio_button :q1,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda yaralanmamıza neden olabilecek kesici, delici, sivri uçlu okul eşyaları ve uygun koşullarda muhafaza edilmeyen malzemeler yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun yakınında tehlike oluşturabilecek tenha parklar, bahçeler ve boş binalar <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q2,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q2,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q2,['3'] %></td>
@@ -73,7 +75,7 @@
           <td class="text-center"><%= f.radio_button :q2,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek sabitlenmemiş okul eşyaları yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun yakınında sağlığa zararlı maddeler <b>kullanılmamaktadır.</b></th>
           <td class="text-center"><%= f.radio_button :q3,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q3,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q3,['3'] %></td>
@@ -81,7 +83,7 @@
           <td class="text-center"><%= f.radio_button :q3,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek fark edilmesi zor olan cam kapılar yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzda eğitim, dışarıdan gelen ses ve gürültüden <b>etkilenmemektedir.</b></th>
           <td class="text-center"><%= f.radio_button :q4,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q4,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q4,['3'] %></td>
@@ -89,7 +91,7 @@
           <td class="text-center"><%= f.radio_button :q4,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek alçak ve korunaksız pencereler yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun giriş-çıkışlarında ve bahçesinde yeterli aydınlatma vardır.</th>
           <td class="text-center"><%= f.radio_button :q5,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q5,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q5,['3'] %></td>
@@ -97,7 +99,7 @@
           <td class="text-center"><%= f.radio_button :q5,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek farklı yükseklikteki zemin ve merdiven basamakları yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun giriş-çıkışlarında ve bahçesinde güvenlik kameraları vardır.</th>
           <td class="text-center"><%= f.radio_button :q6,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q6,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q6,['3'] %></td>
@@ -105,7 +107,7 @@
           <td class="text-center"><%= f.radio_button :q6,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek ıslak ve kaygan zeminler yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun bahçesi korunaklı duvarlar ve/veya tel örgülerle çevrilidir.</th>
           <td class="text-center"><%= f.radio_button :q7,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q7,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q7,['3'] %></td>
@@ -113,7 +115,7 @@
           <td class="text-center"><%= f.radio_button :q7,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek korkuluksuz merdivenler yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzun bahçesindeki her yer, nöbetçi öğretmenlerin ve kameraların görüş alanı içerisindedir.</th>
           <td class="text-center"><%= f.radio_button :q8,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q8,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q8,['3'] %></td>
@@ -121,7 +123,7 @@
           <td class="text-center"><%= f.radio_button :q8,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun koridorları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda (bahçe, bina ve koridorlar) nöbet tutan yeterli sayıda öğretmen vardır.</th>
           <td class="text-center"><%= f.radio_button :q9,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q9,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q9,['3'] %></td>
@@ -129,7 +131,7 @@
           <td class="text-center"><%= f.radio_button :q9,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun kütüphaneleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+          <th style="width:300px;" scope="row">Okul binasına giriş-çıkışlarımız, yönetici ve/veya öğretmen gözetiminde yapılmaktadır.</th>
           <td class="text-center"><%= f.radio_button :q10,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q10,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q10,['3'] %></td>
@@ -137,7 +139,7 @@
           <td class="text-center"><%= f.radio_button :q10,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun pencereleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+          <th style="width:300px;" scope="row">Okula giriş-çıkışlar, güvenlik görevlisi gözetiminde yapılmaktadır.</th>
           <td class="text-center"><%= f.radio_button :q11,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q11,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q11,['3'] %></td>
@@ -145,30 +147,30 @@
           <td class="text-center"><%= f.radio_button :q11,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun yemekhaneleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda veli ve ziyaretçi giriş-çıkışlarının kayıt, kontrol ve denetimi yapılmaktadır.</th>
           <td class="text-center"><%= f.radio_button :q12,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q12,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q12,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q12,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q12,['5'] %></td>
         </tr>
-        <tr>
-          <th style="width:300px;" scope="row">Okulumuzun spor salonları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+        <tr id="s1">
+          <th style="width:300px;" scope="row">Servis araçlarına servis ablası/abisi ve nöbetçi öğretmen eşliğinde biner ve ineriz.</th>
           <td class="text-center"><%= f.radio_button :q13,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q13,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q13,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q13,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q13,['5'] %></td>
         </tr>
-        <tr>
-          <th style="width:300px;" scope="row">Okulumuzun tuvaletleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
+        <tr id="s2">
+          <th style="width:300px;" scope="row">Okul servislerine güvenli bir alanda biner ve okul servislerinden güvenli bir alanda ineriz.</th>
           <td class="text-center"><%= f.radio_button :q14,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q14,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q14,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q14,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q14,['5'] %></td>
         </tr>
-        <tr>
+        <tr id="s3">
           <th style="width:300px;" scope="row">Okulumuzun sınıfları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q15,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q15,['2'] %></td>
@@ -176,8 +178,8 @@
           <td class="text-center"><%= f.radio_button :q15,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q15,['5'] %></td>
         </tr>
-        <tr>
-          <th style="width:300px;" scope="row">Okulumuzda (sınıf, koridorlar, laboratuvar, spor salonu, soyunma odaları ve yüzme havuzu, yemekhane, kantin, tuvaletler, okul bahçesi) temizlik ve hijyen sorunu yoktur.</th>
+        <tr id="s4">
+          <th style="width:300px;" scope="row">Servis aracında servis şoförü ve servis ablamız/abimiz bize iyi davranır ve yardımcı olur.</th>
           <td class="text-center"><%= f.radio_button :q16,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q16,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q16,['3'] %></td>
@@ -185,7 +187,7 @@
           <td class="text-center"><%= f.radio_button :q16,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda kullanılan malzemeler (temizlik malzemeleri, sınıf içi etkinlik ve süsleme malzemeleri vb.) sağlıklıdır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda, öğretmen, veli ve ziyaretçi geliş gidişlerinde araçlara inilip binilen güvenli bir alan mevcuttur.</th>
           <td class="text-center"><%= f.radio_button :q17,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q17,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q17,['3'] %></td>
@@ -193,7 +195,7 @@
           <td class="text-center"><%= f.radio_button :q17,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda küçük sağlık sorunlarına (yaralanma, bayılma vb.) karşı ilk müdahaleyi öğretmenlerimiz / yöneticilerimiz / görevliler yapabilir.</th>
+          <th style="width:300px;" scope="row">Okul yolunda kendimizi güvensiz hissedeceğimiz bir durumla karşılaşmayız.</th>
           <td class="text-center"><%= f.radio_button :q18,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q18,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q18,['3'] %></td>
@@ -201,7 +203,7 @@
           <td class="text-center"><%= f.radio_button :q18,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda kimseye yönelik baskı ve ayrımcılık yapılmaz.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi okul yolunda (yaya, araç ve servisle ulaşım) karşılaşabileceğimiz güvenlik riskleri konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q19,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q19,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q19,['3'] %></td>
@@ -209,7 +211,7 @@
           <td class="text-center"><%= f.radio_button :q19,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda herhangi bir problem yaşadığımda yöneticilerin, öğretmenlerin ve arkadaşlarımın bana yardımcı olacağını bilirim.</th>
+          <th style="width:300px;" scope="row"> Okulumuzda deprem, sel baskını, yangın, kimyasal sızıntı ve saldırı gibi olası risklere karşı tatbikatlar yapılmaktadır.</th>
           <td class="text-center"><%= f.radio_button :q20,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q20,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q20,['3'] %></td>
@@ -217,7 +219,7 @@
           <td class="text-center"><%= f.radio_button :q20,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okul ortamında yaşadığım bir problemle ilgili (sataşma, şiddet vb.) kimden yardım alabileceğimi bilirim.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi deprem, sel baskını, yangın, kimyasal sızıntı gibi durumlar için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q21,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q21,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q21,['3'] %></td>
@@ -225,7 +227,7 @@
           <td class="text-center"><%= f.radio_button :q21,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda bizi rahatsız eden ve kötü davranan gruplar yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi şiddet, saldırı ve terör gibi durumlar için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q22,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q22,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q22,['3'] %></td>
@@ -233,7 +235,7 @@
           <td class="text-center"><%= f.radio_button :q22,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda akran zorbalığı (okul arkadaşı tarafından yapılan rahatsız edici davranışlar) yaşanmaz.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi internet güvenliği için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q23,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q23,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q23,['3'] %></td>
@@ -241,7 +243,7 @@
           <td class="text-center"><%= f.radio_button :q23,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda hırsızlık olayları yaşanmaz.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi sağlığa zararlı madde kullanımı ile ilgili alınacak önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q24,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q24,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q24,['3'] %></td>
@@ -249,7 +251,7 @@
           <td class="text-center"><%= f.radio_button :q24,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda okul eşyalarına zarar verme olayları yaşanmaz.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi akran zorbalığı (okul arkadaşı tarafından yapılan rahatsız edici davranışlar), istismar (yetişkin tarafından yapılan rahatsız edici davranışlar) vb. durumlarda yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q25,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q25,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q25,['3'] %></td>
@@ -257,7 +259,7 @@
           <td class="text-center"><%= f.radio_button :q25,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda şiddet olayları yaşanmaz.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi sağlık sorunları (salgın hastalıklar, bit vb.) hakkında haberdar eder ve yapmamız gerekenler konusunda bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q26,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q26,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q26,['3'] %></td>
@@ -265,7 +267,7 @@
           <td class="text-center"><%= f.radio_button :q26,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Öğretmenler, öğrenciler, veliler, okul yönetimi ve okul personeli arasında güçlü bir iletişim ve iş birliği vardır.</th>
+          <th style="width:300px;" scope="row">Okulumuz bizi okul kuralları ve bu kurallara uyulmaması durumunda yapılacak işlemler hakkında bilgilendirir.</th>
           <td class="text-center"><%= f.radio_button :q27,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q27,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q27,['3'] %></td>
@@ -273,7 +275,7 @@
           <td class="text-center"><%= f.radio_button :q27,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda kendimizi güvende hissederiz.</th>
+          <th style="width:300px;" scope="row">Okul kuralları açık, net ve tutarlıdır.</th>
           <td class="text-center"><%= f.radio_button :q28,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q28,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q28,['3'] %></td>
@@ -281,7 +283,7 @@
           <td class="text-center"><%= f.radio_button :q28,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda başımıza bir şey geldiğinde ya da kendimizi iyi hissetmediğimizde öğretmenlerimiz bunu fark eder ve bize yardımcı olur.</th>
+          <th style="width:300px;" scope="row">Okul kurallarına uyulmadığında yönetici ve öğretmenlerimiz tarafından gerekli uyarılar yapılır ve yaptırımlar uygulanır.</th>
           <td class="text-center"><%= f.radio_button :q29,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q29,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q29,['3'] %></td>
@@ -289,7 +291,7 @@
           <td class="text-center"><%= f.radio_button :q29,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okul kurallarına uyulmadığında yönetici ve öğretmenlerimiz tarafından gerekli uyarılar yapılır ve yaptırımlar uygulanır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda başımıza bir şey geldiğinde ya da kendimizi iyi hissetmediğimizde öğretmenlerimiz bunu fark eder ve bize yardımcı olur.</th>
           <td class="text-center"><%= f.radio_button :q30,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q30,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q30,['3'] %></td>
@@ -297,7 +299,7 @@
           <td class="text-center"><%= f.radio_button :q30,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okul kuralları açık, net ve tutarlıdır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda kendimizi güvende hissederiz.</th>
           <td class="text-center"><%= f.radio_button :q31,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q31,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q31,['3'] %></td>
@@ -305,7 +307,7 @@
           <td class="text-center"><%= f.radio_button :q31,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi okul kuralları ve bu kurallara uyulmaması durumunda yapılacak işlemler hakkında bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Öğretmenler, öğrenciler, veliler, okul yönetimi ve okul personeli arasında güçlü bir iletişim ve iş birliği vardır.</th>
           <td class="text-center"><%= f.radio_button :q32,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q32,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q32,['3'] %></td>
@@ -313,7 +315,7 @@
           <td class="text-center"><%= f.radio_button :q32,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi sağlık sorunları (salgın hastalıklar, bit vb.) hakkında haberdar eder ve yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda şiddet olayları <b>yaşanmaz.</b></th>
           <td class="text-center"><%= f.radio_button :q33,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q33,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q33,['3'] %></td>
@@ -321,7 +323,7 @@
           <td class="text-center"><%= f.radio_button :q33,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi akran zorbalığı (okul arkadaşı tarafından yapılan rahatsız edici davranışlar), istismar (yetişkin tarafından yapılan rahatsız edici davranışlar) vb. durumlarda yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda okul eşyalarına zarar verme olayları <b>yaşanmaz.</b></th>
           <td class="text-center"><%= f.radio_button :q34,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q34,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q34,['3'] %></td>
@@ -329,7 +331,7 @@
           <td class="text-center"><%= f.radio_button :q34,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi sağlığa zararlı madde kullanımı ile ilgili alınacak önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda hırsızlık olayları <b>yaşanmaz.</b></th>
           <td class="text-center"><%= f.radio_button :q35,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q35,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q35,['3'] %></td>
@@ -337,7 +339,7 @@
           <td class="text-center"><%= f.radio_button :q35,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi internet güvenliği için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda akran zorbalığı (okul arkadaşı tarafından yapılan rahatsız edici davranışlar) <b>yaşanmaz.</b></th>
           <td class="text-center"><%= f.radio_button :q36,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q36,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q36,['3'] %></td>
@@ -345,7 +347,7 @@
           <td class="text-center"><%= f.radio_button :q36,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi şiddet, saldırı ve terör gibi durumlar için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda bizi rahatsız eden ve kötü davranan gruplar <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q37,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q37,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q37,['3'] %></td>
@@ -353,7 +355,7 @@
           <td class="text-center"><%= f.radio_button :q37,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi deprem, sel baskını, yangın, kimyasal sızıntı gibi durumlar için alınan önlemler ve yapmamız gerekenler konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okul ortamında yaşadığım bir problemle ilgili (sataşma, şiddet vb.) kimden yardım alabileceğimi bilirim.</th>
           <td class="text-center"><%= f.radio_button :q38,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q38,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q38,['3'] %></td>
@@ -361,7 +363,7 @@
           <td class="text-center"><%= f.radio_button :q38,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row"> Okulumuzda deprem, sel baskını, yangın, kimyasal sızıntı ve saldırı gibi olası risklere karşı tatbikatlar yapılmaktadır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda herhangi bir problem yaşadığımda yöneticilerin, öğretmenlerin ve arkadaşlarımın bana yardımcı olacağını bilirim.</th>
           <td class="text-center"><%= f.radio_button :q39,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q39,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q39,['3'] %></td>
@@ -369,7 +371,7 @@
           <td class="text-center"><%= f.radio_button :q39,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz bizi okul yolunda (yaya, araç ve servisle ulaşım) karşılaşabileceğimiz güvenlik riskleri konusunda bilgilendirir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda kimseye yönelik baskı ve ayrımcılık <b>yapılmaz.</b></th>
           <td class="text-center"><%= f.radio_button :q40,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q40,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q40,['3'] %></td>
@@ -377,7 +379,7 @@
           <td class="text-center"><%= f.radio_button :q40,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okul yolunda kendimizi güvensiz hissedeceğimiz bir durumla karşılaşmayız.</th>
+          <th style="width:300px;" scope="row">Okulumuzda küçük sağlık sorunlarına (yaralanma, bayılma vb.) karşı ilk müdahaleyi öğretmenlerimiz / yöneticilerimiz / görevliler yapabilir.</th>
           <td class="text-center"><%= f.radio_button :q41,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q41,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q41,['3'] %></td>
@@ -385,7 +387,7 @@
           <td class="text-center"><%= f.radio_button :q41,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda, öğretmen, veli ve ziyaretçi geliş gidişlerinde araçlara inilip binilen güvenli bir alan mevcuttur.</th>
+          <th style="width:300px;" scope="row">Okulumuzda kullanılan malzemeler (temizlik malzemeleri, sınıf içi etkinlik ve süsleme malzemeleri vb.) sağlıklıdır.</th>
           <td class="text-center"><%= f.radio_button :q42,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q42,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q42,['3'] %></td>
@@ -393,7 +395,7 @@
           <td class="text-center"><%= f.radio_button :q42,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda veli ve ziyaretçi giriş-çıkışlarının kayıt, kontrol ve denetimi yapılmaktadır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda (sınıf, koridorlar, laboratuvar, spor salonu, soyunma odaları ve yüzme havuzu, yemekhane, kantin, tuvaletler, okul bahçesi) temizlik ve hijyen sorunu <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q43,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q43,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q43,['3'] %></td>
@@ -401,7 +403,7 @@
           <td class="text-center"><%= f.radio_button :q43,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okula giriş-çıkışlar, güvenlik görevlisi gözetiminde yapılmaktadır.</th>
+          <th style="width:300px;" scope="row">Her ihtiyaç duyduğumda okul revirinden (sağlık odası) yararlanırım.</th>
           <td class="text-center"><%= f.radio_button :q44,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q44,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q44,['3'] %></td>
@@ -409,7 +411,7 @@
           <td class="text-center"><%= f.radio_button :q44,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okul binasına giriş-çıkışlarımız, yönetici ve/veya öğretmen gözetiminde yapılmaktadır.</th>
+          <th style="width:300px;" scope="row">Okulumuzun sınıfları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q45,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q45,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q45,['3'] %></td>
@@ -417,7 +419,7 @@
           <td class="text-center"><%= f.radio_button :q45,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda (bahçe, bina ve koridorlar) nöbet tutan yeterli sayıda öğretmen vardır.</th>
+          <th style="width:300px;" scope="row">Okulumuzun tuvaletleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q46,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q46,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q46,['3'] %></td>
@@ -425,7 +427,7 @@
           <td class="text-center"><%= f.radio_button :q46,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun bahçesindeki her yer, nöbetçi öğretmenlerin ve kameraların görüş alanı içerisindedir.</th>
+          <th style="width:300px;" scope="row">Okulumuzun spor salonları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q47,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q47,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q47,['3'] %></td>
@@ -433,7 +435,7 @@
           <td class="text-center"><%= f.radio_button :q47,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun bahçesi korunaklı duvarlar ve/veya tel örgülerle çevrilidir.</th>
+          <th style="width:300px;" scope="row">Okulumuzun yemekhaneleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q48,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q48,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q48,['3'] %></td>
@@ -441,7 +443,7 @@
           <td class="text-center"><%= f.radio_button :q48,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun giriş-çıkışlarında ve bahçesinde güvenlik kameraları vardır.</th>
+          <th style="width:300px;" scope="row">Okulumuzun pencereleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q49,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q49,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q49,['3'] %></td>
@@ -449,7 +451,7 @@
           <td class="text-center"><%= f.radio_button :q49,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun giriş-çıkışlarında ve bahçesinde yeterli aydınlatma vardır.</th>
+          <th style="width:300px;" scope="row">Okulumuzun kütüphaneleri ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q50,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q50,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q50,['3'] %></td>
@@ -457,7 +459,7 @@
           <td class="text-center"><%= f.radio_button :q50,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzda eğitim, dışarıdan gelen ses ve gürültüden etkilenmemektedir.</th>
+          <th style="width:300px;" scope="row">Okulumuzun koridorları ihtiyaçlarımızı karşılayacak sayıda, büyüklükte ve fiziksel özelliktedir.</th>
           <td class="text-center"><%= f.radio_button :q51,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q51,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q51,['3'] %></td>
@@ -465,7 +467,7 @@
           <td class="text-center"><%= f.radio_button :q51,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun yakınında sağlığa zararlı maddeler kullanılmamaktadır.</th>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek korkuluksuz merdivenler <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q52,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q52,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q52,['3'] %></td>
@@ -473,7 +475,7 @@
           <td class="text-center"><%= f.radio_button :q52,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuzun yakınında tehlike oluşturabilecek tenha parklar, bahçeler ve boş binalar yoktur.</th>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek ıslak ve kaygan zeminler <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q53,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q53,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q53,['3'] %></td>
@@ -481,7 +483,7 @@
           <td class="text-center"><%= f.radio_button :q53,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Her ihtiyaç duyduğumda okul revirinden ( sağlık odası) yararlanırım.</th>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek farklı yükseklikteki zemin ve merdiven basamakları <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q54,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q54,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q54,['3'] %></td>
@@ -489,39 +491,39 @@
           <td class="text-center"><%= f.radio_button :q54,['5'] %></td>
         </tr>
         <tr>
-          <th style="width:300px;" scope="row">Okulumuz şiddet ve saldırı olaylarının yaşandığı bir çevrede değildir.</th>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek alçak ve korunaksız pencereler <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q55,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q55,['5'] %></td>
         </tr>
-        <tr id="s1">
-          <th style="width:300px;" scope="row">Servis araçlarına servis ablası/abisi ve nöbetçi öğretmen eşliğinde biner ve ineriz.</th>
+        <tr>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek fark edilmesi zor olan cam kapılar <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q56,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q56,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q56,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q56,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q56,['5'] %></td>
         </tr>
-        <tr id="s2">
-          <th style="width:300px;" scope="row">Okul servislerine güvenli bir alanda biner ve okul servislerinden güvenli bir alanda ineriz.</th>
+        <tr>
+          <th style="width:300px;" scope="row">Okulumuzda düşmemize veya yaralanmamıza neden olabilecek sabitlenmemiş okul eşyaları <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q57,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q57,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q57,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q57,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q57,['5'] %></td>
         </tr>
-        <tr id="s3">
-          <th style="width:300px;" scope="row">Servis şoförümüz ve servis ablamız/abimiz serviste bulunduğumuz sırada güvenliğimizi sağlar.</th>
+        <tr>
+          <th style="width:300px;" scope="row">Okulumuzda yaralanmamıza neden olabilecek kesici, delici, sivri uçlu okul eşyaları ve uygun koşullarda muhafaza edilmeyen malzemeler <b>yoktur.</b></th>
           <td class="text-center"><%= f.radio_button :q58,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q58,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q58,['3'] %></td>
           <td class="text-center"><%= f.radio_button :q58,['4'] %></td>
           <td class="text-center"><%= f.radio_button :q58,['5'] %></td>
         </tr>
-        <tr id="s4">
-          <th style="width:300px;" scope="row">Servis aracında servis şoförü ve servis ablamız/abimiz bize iyi davranır ve yardımcı olur.</th>
+        <tr>
+          <th style="width:300px;" scope="row">Okulumuzun içindeki her yer nöbetçi öğretmenlerin ve kameraların görüş alanı içerisindedir.</th>
           <td class="text-center"><%= f.radio_button :q59,['1'] %></td>
           <td class="text-center"><%= f.radio_button :q59,['2'] %></td>
           <td class="text-center"><%= f.radio_button :q59,['3'] %></td>
@@ -531,7 +533,7 @@
       </tbody>
     </table>
     <div class="row">
-      <div class="col text-right"><%= f.button :submit, value: 'Formu Tamamla', class: 'btn btn-success' %>  <%= link_to 'İptal', form_init_path, class: 'btn btn-dark' %></div>
+      <div class="col text-right"><%= link_to 'İptal', form_init_path, class: 'btn btn-dark' %> <%= f.button :submit, value: 'Formu Tamamla', class: 'btn btn-success' %></div>
     </div>
 
 <% end %>

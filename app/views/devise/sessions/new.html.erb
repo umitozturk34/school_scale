@@ -4,11 +4,6 @@
     <h3 class="h3 mb-3 font-weight-normal">Giriş Yapın</h3>
     <%= f.input :email, required: false, label: false, class: 'sr-only', autofocus: true, placeholder: "Email adresi" %>
     <%= f.input :password, required: false, label: false, class: 'form-control', label_html: { id: "inputPassword" }, placeholder: "Şifre" %><br/>
-    <div class="checkbox mb-3">
-      <label>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </label>
-    </div>
     <%= f.button :submit, "Giriş Yap", class: 'btn btn-lg btn-primary btn-block' %>
     <p class="mt-5 mb-3 text-muted"><%= render "devise/shared/links" %></p>
   </form>
