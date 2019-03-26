@@ -38,7 +38,7 @@ class FormsController < ApplicationController
   def new
     @student_id = Student.where([ "code = ?", session[:code] ])
     @school_id = @student_id[0].school_id
-    @school_name = School.find(@school_id).name
+    # @school_name = School.find(@school_id).name
     session[:school_name] = @school_name
     @form = Form.new
     if session[:code].nil?
