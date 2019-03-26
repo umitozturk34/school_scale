@@ -14,6 +14,7 @@ class FormInitController < ApplicationController
           redirect_to '/form/message'
         else
           flash.now[:notice] = 'Student Found!'
+          session[:number] = @number
           session[:code] = @code
           session[:student_id] = @student.ids
 

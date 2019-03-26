@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
 
   def create
     if current_school.present?
-      @student = Student.new(student_params.merge({school_id: current_school.id , process: 0}))
+      @student = Student.new(student_params.merge({school_id: 0 , process: 0}))
     else
       @student = Student.new(student_params.merge({school_id: 0, process: 0}))
     end
